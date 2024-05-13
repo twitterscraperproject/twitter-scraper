@@ -87,7 +87,6 @@ class Scraper:
 
     def finish(self):
         self.context.storage_state(path = self.settings.session['storage'])
-        # time.sleep(9999)
         self.context.close()
         self.browser.close()
 
@@ -105,8 +104,6 @@ class Scraper:
         print(login_check.count())
         if(login_check.count() > 0):
             self.login()
-
-        # time.sleep(100)
 
         # Scrolls and waits
         while(self.parser.added_tweets < self.settings.settings['limit_posts']):
@@ -127,9 +124,7 @@ class Scraper:
         self.page.get_by_role("button", name="Next").click()
 
         self.context.storage_state(path = self.settings.session['storage'])
-        # time.sleep(5)
 
-        #подивитись маркер сторінки і зробити умову
         self.page.locator("input").fill("teiko89")
         self.page.get_by_role("button", name="Next").click()
 

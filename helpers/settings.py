@@ -43,7 +43,6 @@ class Settings:
 
         self.credentials['login'] = os.getenv("{}CREDENTIALS_LOGIN".format(self.prefix))
         self.credentials['password'] = os.getenv("{}CREDENTIALS_PASSWORD".format(self.prefix))
-        print(self.credentials['password'])
 
         self.urls['login'] = os.getenv("{}URLS_LOGIN".format(self.prefix))
         self.urls['advanced_search'] = os.getenv("{}URLS_ADVANCED_SEARCH".format(self.prefix))
