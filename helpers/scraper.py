@@ -1,3 +1,5 @@
+import json
+from pathlib import Path
 from playwright.sync_api import sync_playwright, Playwright
 import time
 import random
@@ -70,6 +72,11 @@ class Scraper:
             )
 
     def init_context(self):
+        # Create empty storage file if not exist
+        if not Path(self.settings.session['storage']).exists():
+            with open(self.settings.session['storage'], 'w') as fp:
+                json.dump({}, fp)
+
         self.context = self.browser.new_context(
             viewport = {
                 "width": self.viewport_settings['width'],
