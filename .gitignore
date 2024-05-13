@@ -3,3 +3,5 @@ __pycache__/
 env/
 csv/search_timeline.json
 csv/tweets.csv
+google_credentials.json
+session.json
